@@ -1,0 +1,115 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+body{
+	background-color: #303030;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+}
+main{
+	display: flex;
+	max-width: calc(100vw - (1vw + 74px));
+}
+nav{
+	position: fixed;
+	top: 1vw;
+	right: 1vw;
+}
+#setting{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 64px;
+	height: 64px;
+	border-radius: 100%;
+	background-color: rgba(255, 255, 255, 0.7);
+	box-shadow: 2px 2px 5px black;
+	opacity: 0.7;
+}
+#setting img{
+	height: 48px;
+	width: 38px;
+}
+#setting:hover{
+	cursor: pointer;
+	opacity: 1;
+}
+#settingContainer{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(15px);
+	z-index: 1;
+	display: none;
+}
+#settingPopup{
+	position: relative;
+	width: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+	color: white;
+}
+#settingTitle{
+	width: 300px;
+	background-color: rgba(93, 156, 236, 0.5);
+	padding: 10px 0;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+#backgroundImage{
+	width: 300px;
+	padding: 10px 0;
+	text-align: center;
+	margin-bottom: 10px;
+}
+#backgroundImage h3{
+	font-size: 18px;
+	letter-spacing: 1px;
+	font-weight: 400;
+	margin-bottom: 5px;
+}
+#backgroundLink{
+	max-width: 280px;
+	min-width: 280px;
+	max-height: 100px;
+	min-height: 100px;
+	background-color: rgba(0, 0, 0, 0);
+	color: white;
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	letter-spacing: 1px;
+}
+#settingOptions{
+	width: 300px;
+	display: flex;
+}
+.settingOption{
+	width: 150px;
+	padding: 10px 0;
+	text-align: center;
+	font-size: 16px;
+}
+#settingSave{
+	background-color: rgba(160, 212, 104, 0.5);
+}
+#settingSave:hover{
+	cursor: pointer;
+	background-color: rgba(160, 212, 104, 0.7);
+}
+#settingCancel{
+	background-color: rgba(237, 85, 101, 0.5);
+}
+#settingCancel:hover{
+	cursor: pointer;
+	background-color: rgba(237, 85, 101, 0.7);
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ToDoList</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+	<main>
+
+	</main>
+
+	<!-- Setting button -->
+	<nav onclick="settingPopup()">
+		<div id="setting">
+			<img src="img/setting.svg" alt="setting">
+		</div>
+	</nav>
+	
+	<!-- Blur -->
+	<div id="settingContainer">
+
+		<!-- Popup -->
+		<div id="settingPopup">
+			<div id="settingTitle">Setting</div>
+
+			<!-- Background image setting -->
+			<div id="backgroundImage">
+				<h3>Link background image</h3>
+				<textarea id="backgroundLink"></textarea>
+			</div>
+
+			<!-- Save / Cancel -->
+			<div id="settingOptions">
+				<div id="settingSave" class="settingOption" onclick="settingSave()">Save</div>
+				<div id="settingCancel" class="settingOption" onclick="settingPopup()">Cancel</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/main.js"></script>
+</body>
+</html>
