@@ -12,7 +12,7 @@ function settingSave(){
 	var url = document.getElementById('backgroundLink');
 
 	// Set item to loacl storage
-	localStorage.setItem('url', url.value);
+	localStorage.setItem('urlImage', url.value);
 	loadBackground();
 	settingPopup();
 }
@@ -20,9 +20,9 @@ function settingSave(){
 function loadBackground(){
 	
 	// Get item to loacl storage
-	var img = 'url('+localStorage.getItem('url')+')';
+	var img = 'url('+localStorage.getItem('urlImage')+')';
 	var body = document.getElementsByTagName('body')[0];
-	if(localStorage.getItem('url')!=''){
+	if(localStorage.getItem('urlImage')!=''){
 		body.style.backgroundImage = img;
 	}else{
 		body.style.backgroundImage = null;
