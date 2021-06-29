@@ -15,17 +15,17 @@
 	<nav>
 
 		<!-- Setting button -->
-		<div class="navButton" onclick="settingPopup()">
+		<div class="navButton" onclick="Popup('settingContainer')">
 			<img src="img/setting.svg" alt="setting">
 		</div>
 
 		<!-- Add list button -->
-		<div class="navButton">
+		<div class="navButton" onclick="Popup('addListContainer')">
 			<img src="img/plus.svg" alt="addList">
 		</div>
 	</nav>
-	
-	<!-- Blur -->
+
+	<!-- Blur setting container -->
 	<div id="settingContainer">
 
 		<!-- Popup -->
@@ -41,10 +41,26 @@
 			<!-- Save / Cancel -->
 			<div id="settingOptions">
 				<div id="settingSave" class="settingOption" onclick="settingSave()">Save</div>
-				<div id="settingCancel" class="settingOption" onclick="settingPopup()">Cancel</div>
+				<div id="settingCancel" class="settingOption" onclick="Popup('settingContainer')">Cancel</div>
 			</div>
 		</div>
 	</div>
+
+	<!-- Blur addList container -->
+	<div id="addListContainer">
+
+		<!-- Popup -->
+		<div id="addListPopup">
+			<div id="addListTitle">Title List</div>
+
+			<div id="addListOptions">
+				<div id="addListSave" class="addListOption" onclick="">Save</div>
+				<div id="addListCancel" class="addListOption" onclick="Popup('addListContainer')">Cancel</div>
+			</div>
+			
+		</div>
+	</div>
+	
 	<script src="js/main.js"></script>
 </body>
 </html>

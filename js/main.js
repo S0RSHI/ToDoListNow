@@ -1,12 +1,16 @@
-window.onload = loadBackground();
+//Popup
+function Popup(BlurId){
+	var settingPopup = document.getElementById(BlurId);
 
-function settingPopup(){
-	var settingPopup = document.getElementById('settingContainer');
+	// Show/Hide popup
 	if(settingPopup.style.display=='flex')
 		settingPopup.style.display='none';
 	else
 		settingPopup.style.display='flex';
 }
+
+// Background img
+window.onload = loadBackground();
 
 function settingSave(){
 	var url = document.getElementById('backgroundLink');
@@ -14,7 +18,7 @@ function settingSave(){
 	// Set item to loacl storage
 	localStorage.setItem('urlImage', url.value);
 	loadBackground();
-	settingPopup();
+	Popup('settingContainer');
 }
 
 function loadBackground(){
@@ -22,9 +26,13 @@ function loadBackground(){
 	// Get item to loacl storage
 	var img = 'url('+localStorage.getItem('urlImage')+')';
 	var body = document.getElementsByTagName('body')[0];
+
+	// Set background img
 	if(localStorage.getItem('urlImage')!=''){
 		body.style.backgroundImage = img;
 	}else{
 		body.style.backgroundImage = null;
 	}
 }
+
+// List management
