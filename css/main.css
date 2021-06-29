@@ -19,22 +19,19 @@ nav{
 	top: 1vw;
 	right: 1vw;
 }
-#setting{
+.navButton{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 64px;
 	height: 64px;
 	border-radius: 100%;
-	background-color: rgba(255, 255, 255, 0.7);
+	background-color: rgba(255, 255, 255, 1);
 	box-shadow: 2px 2px 5px black;
-	opacity: 0.7;
+	margin-bottom: 1vw;
+	opacity: 0.8;
 }
-#setting img{
-	height: 48px;
-	width: 38px;
-}
-#setting:hover{
+.navButton:hover{
 	cursor: pointer;
 	opacity: 1;
 }
