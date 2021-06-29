@@ -138,12 +138,33 @@ nav{
 }
 #addListTitle{
 	width: 300px;
+	height: 53px;
+	overflow: hidden;
 	background-color: rgba(93, 156, 236, 0.5);
-	padding: 10px 0;
 	text-align: center;
 	font-size: 20px;
 	font-weight: bold;
 	letter-spacing: 2px;
+
+}
+#listTitle{
+	width: 300px;
+	height: 53px;
+	text-align: center;
+	background:transparent;
+    outline:none;
+    border:none;
+	color: white;
+	width:100%;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+#listTitle::placeholder{
+	color: rgba(255, 255, 255, 0.5);
+}
+#listTitle:focus::placeholder{
+	color: rgba(255, 255, 255, 0);
 }
 #addListOptions{
 	width: 300px;
