@@ -142,3 +142,57 @@ nav{
 #listTitle:focus::placeholder{
 	color: rgba(255, 255, 255, 0);
 }
+/* Add Task */
+#addTask{
+	width: 280px;
+	margin: 10px 0px 10px 10px;
+	background-color: rgba(255, 255, 255, 0.7);
+	text-align: center;
+}
+#addTask:hover{
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 1);
+}
+#addTask img{
+	margin-top: 2px;
+	padding: 2px;
+	width: 16px;
+	filter: contrast(50);
+}
+/* Task */
+#tasks{
+	margin: 1px 0px;
+	width: 300px;
+	max-height: 400px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+#tasks::-webkit-scrollbar{
+	width: 3px;
+} 
+#tasks::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.5);
+	outline: 1px solid rgba(255, 255, 255, 0.5);
+}
+#task::-webkit-scrollbar-corner{
+	display: none;
+}
+.task{
+	width: 300px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+	text-align: center;
+}
+.taskText{
+	width: 275px;
+	margin: 10px 0px;
+	height: 70px;
+	padding-left: 2px;
+	background-color: rgba(0, 0, 0, 0);
+	color: white;
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	letter-spacing: 1px;
+	resize: none;
+}
+.taskText:focus::placeholder{
+	color: rgba(255, 255, 255, 0);
+}

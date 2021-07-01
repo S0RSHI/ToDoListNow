@@ -56,11 +56,21 @@
 			<div class="title">
 				<input id="listTitle" type="text" maxlength="21" placeholder="List Title">
 			</div>
+
+			<!-- Task -->
+			<div id="tasks">
+				<div class="task">
+					<textarea name="" class="taskText"  maxlength="128" placeholder="Task text (max 128 character)"></textarea>
+				</div>
+			</div>
+			<div id="addTask" onclick="addTask()">
+				<img src="img/plus.svg" alt="add task">
+			</div>
 			
 			<!-- Save / Cancel -->
 			<div class="popupOptions">
-				<div class="option save" onclick="">Save</div>
-				<div class="option cancel" onclick="Popup('addListContainer')">Cancel</div>
+				<div class="option save" onclick="clearTask();">Save</div>
+				<div class="option cancel" onclick="Popup('addListContainer'); clearTask();">Cancel</div>
 			</div>
 			
 		</div>
