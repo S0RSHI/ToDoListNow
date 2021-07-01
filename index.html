@@ -26,11 +26,11 @@
 	</nav>
 
 	<!-- Blur setting container -->
-	<div id="settingContainer">
+	<div id="settingContainer" class="blur">
 
 		<!-- Popup -->
-		<div id="settingPopup">
-			<div id="settingTitle">Setting</div>
+		<div class="popup">
+			<div class="title">Setting</div>
 
 			<!-- Background image setting -->
 			<div id="backgroundImage">
@@ -39,28 +39,28 @@
 			</div>
 
 			<!-- Save / Cancel -->
-			<div id="settingOptions">
-				<div id="settingSave" class="settingOption" onclick="settingSave()">Save</div>
-				<div id="settingCancel" class="settingOption" onclick="Popup('settingContainer')">Cancel</div>
+			<div class="popupOptions">
+				<div  class="option save" onclick="settingSave()">Save</div>
+				<div class="option cancel" onclick="Popup('settingContainer')">Cancel</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- Blur addList container -->
-	<div id="addListContainer">
+	<div id="addListContainer" class="blur">
 
 		<!-- Popup -->
-		<div id="addListPopup">
+		<div class="popup">
 			
 			<!-- addList title -->
-			<div id="addListTitle">
+			<div class="title">
 				<input id="listTitle" type="text" maxlength="21" placeholder="List Title">
 			</div>
 			
 			<!-- Save / Cancel -->
-			<div id="addListOptions">
-				<div id="addListSave" class="addListOption" onclick="">Save</div>
-				<div id="addListCancel" class="addListOption" onclick="Popup('addListContainer')">Cancel</div>
+			<div class="popupOptions">
+				<div class="option save" onclick="">Save</div>
+				<div class="option cancel" onclick="Popup('addListContainer')">Cancel</div>
 			</div>
 			
 		</div>

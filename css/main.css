@@ -38,8 +38,8 @@ nav{
 	opacity: 1;
 }
 
-/* Setting */
-#settingContainer{
+/* Popup */
+.blur{
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -50,16 +50,15 @@ nav{
 	background-color: rgba(0, 0, 0, 0.5);
 	backdrop-filter: blur(15px);
 	z-index: 1;
-	display: none;
 }
-#settingPopup{
+.popup{
 	position: relative;
 	width: 300px;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
 	color: white;
 }
-#settingTitle{
+.title{
 	width: 300px;
 	background-color: rgba(93, 156, 236, 0.5);
 	padding: 10px 0;
@@ -67,6 +66,35 @@ nav{
 	font-size: 20px;
 	font-weight: bold;
 	letter-spacing: 2px;
+}
+.popupOptions{
+	width: 300px;
+	display: flex;
+}
+.option{
+	width: 150px;
+	padding: 10px 0;
+	text-align: center;
+	font-size: 16px;
+}
+.save{
+	background-color: rgba(160, 212, 104, 0.5);
+}
+.save:hover{
+	cursor: pointer;
+	background-color: rgba(160, 212, 104, 0.7);
+}
+.cancel{
+	background-color: rgba(237, 85, 101, 0.5);
+}
+.cancel:hover{
+	cursor: pointer;
+	background-color: rgba(237, 85, 101, 0.7);
+}
+
+/* Setting */
+#settingContainer{
+	display: none;
 }
 #backgroundImage{
 	width: 300px;
@@ -90,66 +118,14 @@ nav{
 	border: 2px solid rgba(255, 255, 255, 0.5);
 	letter-spacing: 1px;
 }
-#settingOptions{
-	width: 300px;
-	display: flex;
-}
-.settingOption{
-	width: 150px;
-	padding: 10px 0;
-	text-align: center;
-	font-size: 16px;
-}
-#settingSave{
-	background-color: rgba(160, 212, 104, 0.5);
-}
-#settingSave:hover{
-	cursor: pointer;
-	background-color: rgba(160, 212, 104, 0.7);
-}
-#settingCancel{
-	background-color: rgba(237, 85, 101, 0.5);
-}
-#settingCancel:hover{
-	cursor: pointer;
-	background-color: rgba(237, 85, 101, 0.7);
-}
 
 /* Add List */
 #addListContainer{
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	justify-content: center;
-	align-items: center;
-	background-color: rgba(0, 0, 0, 0.5);
-	backdrop-filter: blur(15px);
-	z-index: 1;
 	display: none;
-}
-#addListPopup{
-	position: relative;
-	width: 300px;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-	color: white;
-}
-#addListTitle{
-	width: 300px;
-	height: 53px;
-	overflow: hidden;
-	background-color: rgba(93, 156, 236, 0.5);
-	text-align: center;
-	font-size: 20px;
-	font-weight: bold;
-	letter-spacing: 2px;
-
 }
 #listTitle{
 	width: 300px;
-	height: 53px;
+	height: 24px;
 	text-align: center;
 	background:transparent;
     outline:none;
@@ -165,28 +141,4 @@ nav{
 }
 #listTitle:focus::placeholder{
 	color: rgba(255, 255, 255, 0);
-}
-#addListOptions{
-	width: 300px;
-	display: flex;
-}
-.addListOption{
-	width: 150px;
-	padding: 10px 0;
-	text-align: center;
-	font-size: 16px;
-}
-#addListSave{
-	background-color: rgba(160, 212, 104, 0.5);
-}
-#addListSave:hover{
-	cursor: pointer;
-	background-color: rgba(160, 212, 104, 0.7);
-}
-#addListCancel{
-	background-color: rgba(237, 85, 101, 0.5);
-}
-#addListCancel:hover{
-	cursor: pointer;
-	background-color: rgba(237, 85, 101, 0.7);
 }
