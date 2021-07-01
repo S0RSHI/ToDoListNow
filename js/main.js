@@ -37,8 +37,6 @@ function loadBackground(){
 //console.log(localStorage.getItem(localStorage.key(i)));
 // List management
 
-howManyTask = 0;
-
 function addTask(){
 	var newTask = document.createElement('div');
 	document.getElementById('tasks').appendChild(newTask);
@@ -46,13 +44,12 @@ function addTask(){
 	newTask.appendChild(textTask);
 	newTask.classList.add('task');
 	textTask.classList.add('taskText');
-	howManyTask++;
 }
 
 function clearTask(){
-	if(howManyTask>0)
-		for( i = 0; i < howManyTask; i++){
-			document.getElementsByClassName('task')[1].remove();
-		}
-	howManyTask = 0;
+	listy = document.querySelectorAll('.task');
+	listy.forEach((element, index) => {
+		if(index == 0) return;
+		element.remove(); 
+	});
 }
