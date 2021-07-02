@@ -51,7 +51,7 @@ function listSave(){
 
 	//Check if the lists exist in local storage
 	lists = JSON.parse(localStorage.getItem('listsStr')) || [];
-	
+
 	//Creating an object to add
 	let all = {
 		name: title.value,
@@ -67,6 +67,7 @@ function listSave(){
 	localStorage.setItem('listsStr', listsStr);
 }
 
+//Clear
 function clearAll(){
 	//Task
 	let lists = document.querySelectorAll('.task');
@@ -88,3 +89,8 @@ function clearAll(){
 		element.value = null;
 	});
 }
+/*
+function createList(){
+	lists = JSON.parse(localStorage.getItem('listsStr'));
+	
+}*/
