@@ -1,6 +1,6 @@
 //Popup
 function Popup(BlurId){
-	var settingPopup = document.getElementById(BlurId);
+	let settingPopup = document.getElementById(BlurId);
 
 	// Show/Hide popup
 	if(settingPopup.style.display=='flex')
@@ -12,7 +12,7 @@ function Popup(BlurId){
 window.onload = loadBackground();
 
 function settingSave(){
-	var url = document.getElementById('backgroundLink');
+	let url = document.getElementById('backgroundLink');
 
 	// Set item to loacl storage
 	localStorage.setItem('urlImage', url.value);
@@ -23,8 +23,8 @@ function settingSave(){
 function loadBackground(){
 	
 	// Get item to loacl storage
-	var img = 'url('+localStorage.getItem('urlImage')+')';
-	var body = document.getElementsByTagName('body')[0];
+	let img = 'url('+localStorage.getItem('urlImage')+')';
+	let body = document.getElementsByTagName('body')[0];
 
 	// Set background img
 	if(localStorage.getItem('urlImage')!=''){
@@ -38,18 +38,32 @@ function loadBackground(){
 // List management
 
 function addTask(){
-	var newTask = document.createElement('div');
+	let newTask = document.createElement('div');
+	let textTask = document.createElement('textarea');
 	document.getElementById('tasks').appendChild(newTask);
-	var textTask = document.createElement('textarea');
 	newTask.appendChild(textTask);
 	newTask.classList.add('task');
 	textTask.classList.add('taskText');
 }
 
-function clearTask(){
-	listy = document.querySelectorAll('.task');
+function clearAll(){
+	//Task
+	let listy = document.querySelectorAll('.task');
 	listy.forEach((element, index) => {
 		if(index == 0) return;
 		element.remove(); 
+	});
+
+
+	//Input
+	let input = document.querySelectorAll('input');
+	input.forEach(element => {
+		element.value = null;
+	});
+
+	//Textarea
+	let textarea = document.querySelectorAll('textarea');
+	textarea.forEach(element => {
+		element.value = null;
 	});
 }

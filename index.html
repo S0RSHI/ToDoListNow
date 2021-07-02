@@ -40,8 +40,8 @@
 
 			<!-- Save / Cancel -->
 			<div class="popupOptions">
-				<div  class="option save" onclick="settingSave()">Save</div>
-				<div class="option cancel" onclick="Popup('settingContainer')">Cancel</div>
+				<div  class="option save" onclick="settingSave(); clearAll();">Save</div>
+				<div class="option cancel" onclick="Popup('settingContainer'); clearAll();">Cancel</div>
 			</div>
 		</div>
 	</div>
@@ -69,8 +69,8 @@
 			
 			<!-- Save / Cancel -->
 			<div class="popupOptions">
-				<div class="option save" onclick="clearTask();">Save</div>
-				<div class="option cancel" onclick="Popup('addListContainer'); clearTask();">Cancel</div>
+				<div class="option save" onclick="clearAll();">Save</div>
+				<div class="option cancel" onclick="Popup('addListContainer'); clearAll();">Cancel</div>
 			</div>
 			
 		</div>
