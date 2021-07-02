@@ -50,25 +50,15 @@ function listSave(){
 	let task = document.querySelectorAll('.taskText');
 
 	//Check if the lists exist in local storage
-	if(localStorage.getItem('listsStr') === null){
-		lists = [];
-	}else{
-		lists = JSON.parse(localStorage.getItem('listsStr'));
-	};
-
-	//Grouping of all tasks
-	tasks = [{}];
-	task.forEach((element, index) => {
-			tasks[index] = {
-				text: element.value,
-				done: false
-			}
-	})
-
+	lists = JSON.parse(localStorage.getItem('listsStr')) || [];
+	
 	//Creating an object to add
 	let all = {
 		name: title.value,
-		tasks
+		tasks: [...task].map( (el, index) => ({
+            text: el.value,
+            done: false
+        }))
 	};
 	
 	//Sending JSON to local storage
