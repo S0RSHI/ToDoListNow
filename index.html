@@ -60,7 +60,7 @@
 			<!-- Task -->
 			<div id="tasks">
 				<div class="task">
-					<textarea name="" class="taskText"  maxlength="128" placeholder="Task text (max 128 character)"></textarea>
+					<textarea  class="taskText"  maxlength="128" placeholder="Task text (max 128 character)"></textarea>
 				</div>
 			</div>
 			<div id="addTask" onclick="addTask()">
@@ -69,7 +69,7 @@
 			
 			<!-- Save / Cancel -->
 			<div class="popupOptions">
-				<div class="option save" onclick="clearAll();">Save</div>
+				<div class="option save" onclick="listSave(); clearAll();">Save</div>
 				<div class="option cancel" onclick="Popup('addListContainer'); clearAll();">Cancel</div>
 			</div>
 			

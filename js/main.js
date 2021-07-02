@@ -36,7 +36,6 @@ function loadBackground(){
 
 //console.log(localStorage.getItem(localStorage.key(i)));
 // List management
-
 function addTask(){
 	let newTask = document.createElement('div');
 	let textTask = document.createElement('textarea');
@@ -46,10 +45,42 @@ function addTask(){
 	textTask.classList.add('taskText');
 }
 
+function listSave(){
+	let title = document.querySelector('#listTitle');
+	let task = document.querySelectorAll('.taskText');
+
+	//Check if the lists exist in local storage
+	if(localStorage.getItem('listsStr') === null){
+		lists = [];
+	}else{
+		lists = JSON.parse(localStorage.getItem('listsStr'));
+	};
+
+	//Grouping of all tasks
+	tasks = [{}];
+	task.forEach((element, index) => {
+			tasks[index] = {
+				text: element.value,
+				done: false
+			}
+	})
+
+	//Creating an object to add
+	let all = {
+		name: title.value,
+		tasks
+	};
+	
+	//Sending JSON to local storage
+	lists.push(all);
+	let listsStr = JSON.stringify(lists);
+	localStorage.setItem('listsStr', listsStr);
+}
+
 function clearAll(){
 	//Task
-	let listy = document.querySelectorAll('.task');
-	listy.forEach((element, index) => {
+	let lists = document.querySelectorAll('.task');
+	lists.forEach((element, index) => {
 		if(index == 0) return;
 		element.remove(); 
 	});
