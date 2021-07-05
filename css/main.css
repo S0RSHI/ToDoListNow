@@ -202,10 +202,12 @@ nav{
 .toDoContainer{
 	position: relative;
 	width: 300px;
+	height: fit-content;
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(5px);
 	color: white;
-	margin: 2vw;
+	margin-top: 32px;
+	margin-left: 32px;
 	box-shadow: black 3px 3px 7px;
 }
 .toDoTitle{
@@ -221,11 +223,13 @@ nav{
 	width: 290px;
 	padding: 5px;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+	color:rgba(255, 255, 255, 0.7)
 }
 .toDoTask:hover{
 	cursor: pointer;
 	background-color: rgba(0, 0, 0, 1);
-	text-decoration: none;
+	color: white;
+	opacity: 1;
 }
 .done{
 	background-color: rgba(160, 212, 104, 0.5);

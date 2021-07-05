@@ -20,8 +20,7 @@ function settingSave(){
 	Popup('settingContainer');
 }
 
-function loadBackground(){
-	
+function loadBackground(){	
 	// Get item to loacl storage
 	let img = 'url('+localStorage.getItem('urlImage')+')';
 	let body = document.getElementsByTagName('body')[0];
@@ -34,11 +33,11 @@ function loadBackground(){
 	}
 }
 
-//console.log(localStorage.getItem(localStorage.key(i)));
 // List management
 function addTask(){
 	let newTask = document.createElement('div');
 	let textTask = document.createElement('textarea');
+	textTask.setAttribute("maxlength","128");
 	document.getElementById('tasks').appendChild(newTask);
 	newTask.appendChild(textTask);
 	newTask.classList.add('task');
@@ -89,8 +88,100 @@ function clearAll(){
 		element.value = null;
 	});
 }
-/*
+
+function deleteList(listNumber){
+	allLists = JSON.parse(localStorage.getItem('listsStr'));
+	//Delte empty object in JSON
+	lists = [];
+	allLists.forEach((x, y) => {
+		if(y != listNumber){
+			lists.push(x);
+		}
+	});
+
+	//Send or delete item in local storage
+	if(lists != ''){
+		let listsStr = JSON.stringify(lists);
+		localStorage.setItem('listsStr', listsStr);
+	}else{
+		localStorage.removeItem('listsStr');
+	}
+
+	removeAllList();
+	createList();
+}
+
+//Create all list on page
 function createList(){
-	lists = JSON.parse(localStorage.getItem('listsStr'));
-	
-}*/
+	let lists = JSON.parse(localStorage.getItem('listsStr')) || false;
+
+	//Check if item exist in local storage
+	if(lists != false){
+		let main = document.getElementsByTagName('main')[0];
+
+		//Create all div
+		lists.forEach((obj, index) => {
+			let toDoContainer = document.createElement('div');
+			toDoContainer.className = 'toDoContainer';
+
+			let toDoTitle = document.createElement('div');
+			toDoTitle.className = 'toDoTitle';
+			toDoTitle.innerHTML = obj.name;
+
+			let toDoTaskContainer = document.createElement('div');
+			toDoTaskContainer.className = 'toDoTaskContainer';
+
+			//Insert one div into another
+			main.appendChild(toDoContainer);
+			toDoContainer.appendChild(toDoTitle);
+			toDoContainer.appendChild(toDoTaskContainer);
+
+			//Create task div
+			obj.tasks.forEach((task, taskIndex) => {
+				let toDoTask = document.createElement('div');
+				toDoTask.className = 'toDoTask';
+				toDoTask.setAttribute("onclick","change("+index+","+taskIndex+");");
+
+				if(task.done == true)
+					toDoTask.className += ' done';
+
+				toDoTask.innerHTML = task.text;
+				toDoTaskContainer.appendChild(toDoTask);
+			});
+
+			//Create delete div
+			let deleteList = document.createElement('div');
+			deleteList.className = 'delete';
+			deleteList.setAttribute("onclick","deleteList("+index+");");
+			deleteList.innerHTML = 'Delete';
+			toDoContainer.appendChild(deleteList);
+		});
+	}
+}
+
+//Clear all lists on page
+function removeAllList(){
+	let allList = document.querySelectorAll('.toDoContainer');
+	allList.forEach((el, index) => {
+		document.getElementsByClassName('toDoContainer')[0].remove();
+	});
+}
+
+//Change task
+function change(listIndex, taskIndex){
+	let lists = JSON.parse(localStorage.getItem('listsStr'));
+	let task = lists[listIndex].tasks[taskIndex].done;
+
+	if(task){
+		lists[listIndex].tasks[taskIndex].done = false;
+	}else{
+		lists[listIndex].tasks[taskIndex].done = true;
+	}
+
+	let listsStr = JSON.stringify(lists);
+	localStorage.setItem('listsStr', listsStr);
+
+	removeAllList();
+	createList();
+}
+window.onload = createList();

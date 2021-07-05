@@ -9,23 +9,7 @@
 </head>
 <body>
 	<main>
-		<div class="toDoContainer">
-			<div class="toDoTitle">Siema</div>
-			<div class="toDoTaskContainer">
-				<div class="toDoTask done">
-					The Reason I Wanted To Die 僕が死のうと思ったのは【Cover: Nakashima Mika】【Lyrics: amazarashi】
-				</div>
-				<div class="toDoTask">
-					The Reason I Wanted To Die 僕が死のうと思ったのは【Cover: Nakashima Mika】【Lyrics: amazarashi】
-				</div>
-				<div class="toDoTask">
-					The Reason I Wanted To Die 僕が死のうと思ったのは【Cover: Nakashima Mika】【Lyrics: amazarashi】
-				</div>
-				<div class="toDoTask">
-					The Reason I Wanted To Die 僕が死のうと思ったのは【Cover: Nakashima Mika】【Lyrics: amazarashi】
-				</div>
-			</div>
-			<div class="delete">Delete</div>
+		
 	</main>
 
 	<nav>
@@ -84,7 +68,7 @@
 			
 			<!-- Save / Cancel -->
 			<div class="popupOptions">
-				<div class="option save" onclick="listSave(); clearAll();">Save</div>
+				<div class="option save" onclick="listSave(); clearAll(); removeAllList(); createList(); Popup('addListContainer');">Save</div>
 				<div class="option cancel" onclick="Popup('addListContainer'); clearAll();">Cancel</div>
 			</div>
 			
