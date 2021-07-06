@@ -223,7 +223,7 @@ nav{
 	width: 290px;
 	padding: 5px;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-	color:rgba(255, 255, 255, 0.7)
+	color:rgba(255, 255, 255, 0.9)
 }
 .toDoTask:hover{
 	cursor: pointer;

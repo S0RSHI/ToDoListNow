@@ -162,7 +162,7 @@ function createList(){
 //Clear all lists on page
 function removeAllList(){
 	let allList = document.querySelectorAll('.toDoContainer');
-	allList.forEach((el, index) => {
+	allList.forEach( () => {
 		document.getElementsByClassName('toDoContainer')[0].remove();
 	});
 }
